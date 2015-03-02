@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin:'idea'
+apply plugin:'scala'
+apply plugin:'application'
+apply plugin:'groovy'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    scalaVersion = '2.10'
+    scalaVersionRevision = '3'
+    scalazVersion = '7.0.5'
+    specs2Version = '2.3.4'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile "org.scala-lang:scala-compiler:$scalaVersion.$scalaVersionRevision"
+    compile "org.scala-lang:scala-library:$scalaVersion.$scalaVersionRevision"
+    compile "org.scala-lang:scala-reflect:$scalaVersion.$scalaVersionRevision"
+    compile "org.scala-lang:scala-swing:2.10.4"
+    compile "org.codehaus.groovy:groovy-all:2.1.6"
+
+}
+
